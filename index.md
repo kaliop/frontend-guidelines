@@ -11,13 +11,13 @@ hero:
       link: /getting-started/
     - theme: alt
       text: Browse documentation
-      link: /tailwind/styles-architecture
+      link: /tailwind/installation-and-editor-setup
 
 features:
   - title: Tailwind CSS
     details: Styles architecture, design tokens (colors, spacing, typography, easings), layout utilities, and custom variants.
-    link: /tailwind/styles-architecture
-    linkText: Styles Architecture
+    link: /tailwind/installation-and-editor-setup
+    linkText: Installation and editor setup
   - title: Components
     details: Atomic design methodology and naming conventions for structuring the design system.
     link: /components/
