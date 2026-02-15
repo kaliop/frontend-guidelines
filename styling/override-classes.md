@@ -26,7 +26,7 @@ type UiMyComponentProps = {
 const UiMyComponent = ({ title, overrideClasses }: UiMyComponentProps) => {
   const classes = tv({
     slots: {
-      root: "flex flex-col gap-m",
+      root: "flex flex-col gap-3",
       titleElement: "heading-6",
     },
   });

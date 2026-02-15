@@ -21,7 +21,7 @@ Slots are the core concept. Each DOM element in a component is associated with a
 ```typescript
 const classes = tv({
   slots: {
-    root: "flex flex-col gap-m",
+    root: "flex flex-col gap-3",
     titleElement: "heading-6",
     descriptionElement: "body-m",
   },
@@ -49,8 +49,8 @@ const UiMyComponent = ({ size = "default" }) => {
     },
     variants: {
       size: {
-        default: { root: "size-50" },
-        small: { root: "size-30" },
+        default: { root: "size-[50px]" },
+        small: { root: "size-[30px]" },
       },
     },
   });

@@ -18,6 +18,10 @@ export default defineConfig({
         text: "Tailwind CSS",
         items: [
           {
+            text: "Installation and editor setup",
+            link: "/tailwind/installation-and-editor-setup",
+          },
+          {
             text: "Styles Architecture",
             link: "/tailwind/styles-architecture",
           },

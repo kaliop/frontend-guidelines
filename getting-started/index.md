@@ -38,6 +38,30 @@ styles/
 └── utilities/             # Utility classes
 ```
 
+## Differences from previous guidelines
+
+If you're coming from our previous guidelines, which relied on **Sass** and sometimes **CSS modules**, here's how the current Tailwind-based approach differs.
+
+### Sass is no longer necessary
+
+Our previous guidelines relied on **Sass** for variables, nesting, and imports. With Tailwind CSS, **Sass is no longer necessary**. Tailwind is designed as a full-featured CSS build tool for a specific workflow and is not intended to be used with preprocessors like Sass, Less, or Stylus — think of Tailwind itself as your preprocessor. For modern browsers, you get what you used to rely on Sass for in other ways:
+
+- **Variables** — Native CSS custom properties (`@theme` and `var(--...)`) are supported everywhere Tailwind runs.
+- **Nesting** — Tailwind uses Lightning CSS to process nested CSS, and native CSS nesting is also well supported in current browsers.
+- **Imports** — Tailwind bundles CSS files included via `@import` at build time, without a separate preprocessor.
+- **Colors and math** — Use your design tokens or modern CSS (`color-mix()`, `min()`, `max()`) instead of Sass functions like `darken`/`lighten`.
+
+### CSS modules are not required
+
+**CSS modules** are not required when using Tailwind. Tailwind can co-exist with them (e.g. when introducing Tailwind into an existing codebase), but the official docs [recommend avoiding the combination](https://tailwindcss.com/docs/compatibility#css-modules) when possible. Reasons:
+
+- **Scoping** — CSS modules solve scoping problems that don't arise with utility classes: each class has a single, predictable effect wherever it's used, so there's no need for file-level scope.
+- **Performance** — Build tools process each CSS module separately. With many modules, Tailwind has to run once per file, which slows down builds and worsens developer experience.
+
+Prefer styling with utility classes in your markup (and, when needed, shared styles in a small set of global or layout CSS files). If you do use component `<style>` blocks (Vue, Svelte, Astro), either avoid Tailwind-specific features there or import your global styles with `@reference` so that `@apply` and theme variables work as expected.
+
+For full details on browser support, preprocessors, and CSS modules, see the official [Compatibility](https://tailwindcss.com/docs/compatibility) documentation.
+
 ## How to use this guide
 
 Depending on your task, start with the relevant section:
