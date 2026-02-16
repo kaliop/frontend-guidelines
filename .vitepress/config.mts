@@ -5,7 +5,7 @@ export default defineConfig({
   description:
     "Guidelines and best practices for frontend development at Kaliop",
   lang: "en-US",
-  base: "/guidelines-frontend/",
+  base: "/",
   themeConfig: {
     nav: [],
 
