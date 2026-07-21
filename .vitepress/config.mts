@@ -65,7 +65,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/Starter-Agency/kaliop-2025" },
+      { icon: "github", link: "https://github.com/kaliop/frontend-guidelines" },
     ],
 
     search: {
