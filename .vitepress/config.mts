@@ -6,6 +6,9 @@ export default defineConfig({
     "Guidelines and best practices for frontend development at Kaliop",
   lang: "en-US",
   base: "/frontend-guidelines/",
+  // README.md is a repo-level doc for GitHub, not a site page; its links point
+  // to source files and would otherwise be flagged as dead links at build time.
+  srcExclude: ["README.md"],
   themeConfig: {
     nav: [],
 
