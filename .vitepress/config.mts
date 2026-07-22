@@ -9,6 +9,12 @@ export default defineConfig({
   // README.md is a repo-level doc for GitHub, not a site page; its links point
   // to source files and would otherwise be flagged as dead links at build time.
   srcExclude: ["README.md"],
+  // Favicon. Paths must include the `base` prefix so they resolve in production.
+  head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/frontend-guidelines/icon0.svg" }],
+    ["link", { rel: "icon", type: "image/png", href: "/frontend-guidelines/icon1.png" }],
+    ["link", { rel: "apple-touch-icon", href: "/frontend-guidelines/icon1.png" }],
+  ],
   themeConfig: {
     nav: [],
 
