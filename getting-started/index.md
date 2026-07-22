@@ -32,10 +32,10 @@ components/
     └── primitives/        # Headless/unstyled components
 
 styles/
-├── base/                  # Base styles and resets
+├── base/                  # Element styles and resets (plain CSS)
 ├── configs/               # Design tokens (@theme)
-├── helpers/               # Custom variants and helpers
-└── utilities/             # Utility classes
+├── variants/              # Custom variants (@custom-variant)
+└── utilities/             # Custom utility classes (@utility)
 ```
 
 ## Differences from previous guidelines

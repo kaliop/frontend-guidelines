@@ -7,7 +7,7 @@ Tailwind CSS allows you to create [custom variants](https://tailwindcss.com/docs
 Custom variants are defined in a dedicated file:
 
 ```css
-/* styles/helpers/variants.css */
+/* styles/variants/variants.css */
 
 @custom-variant hoverfocus (&:hover, &:focus);
 @custom-variant dataactive (&[data-active]:not([data-active="false"]));

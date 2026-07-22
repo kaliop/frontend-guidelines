@@ -35,7 +35,7 @@ Base tokens define the fundamental typographic values that will be used to build
 
 ## Typography Utilities
 
-Typography utilities are composite classes that combine size, line-height, and font-weight into reusable styles. They are defined using `@utility` in the utilities folder.
+Typography utilities are custom utility classes that combine size, line-height, and font-weight into reusable styles. They are defined using `@utility` in the utilities folder.
 
 ```css
 /* styles/utilities/text.css */
