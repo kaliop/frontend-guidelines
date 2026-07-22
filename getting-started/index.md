@@ -15,11 +15,13 @@ These guidelines focus on architecture, styling, and component organization. The
 
 ## Tech Stack
 
-| Tool | Purpose |
-|------|---------|
-| **Tailwind CSS** | Utility-first CSS framework |
-| **tailwind-variants** | Component styling with slots and variants |
-| **Storybook** | Component documentation and visual testing |
+| Tool | Purpose | Requirement |
+|------|---------|-------------|
+| **Tailwind CSS** | Utility-first CSS framework | Required |
+| **tailwind-variants** | Component styling with slots and variants | Required |
+| **Storybook** | Component documentation and visual testing | Optional |
+
+Storybook is **optional**: it documents and tests components in isolation, but a project can follow the styling and component conventions without it.
 
 ## Project Structure
 
