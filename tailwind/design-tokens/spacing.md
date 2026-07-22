@@ -10,7 +10,7 @@ You define a **single** value, `--spacing` (the base multiplier). Tailwind CSS v
 /* styles/configs/spacing.css */
 
 @theme {
-  --spacing: 4px;
+  --spacing: 0.25rem; /* 4px */
 }
 ```
 
@@ -18,16 +18,16 @@ Every numeric spacing utility is derived as `n × --spacing`, for **any integer*
 
 | Utility | Computed as | Value |
 |---------|-------------|-------|
-| `p-1` | `1 × 4px` | 4px |
-| `p-2` | `2 × 4px` | 8px |
-| `p-4` | `4 × 4px` | 16px |
-| `p-8` | `8 × 4px` | 32px |
-| `p-13` | `13 × 4px` | 52px |
+| `p-1` | `1 × 0.25rem` | 4px |
+| `p-2` | `2 × 0.25rem` | 8px |
+| `p-4` | `4 × 0.25rem` | 16px |
+| `p-8` | `8 × 0.25rem` | 32px |
+| `p-13` | `13 × 0.25rem` | 52px |
 
 The scale is **linear**: `p-5` is always `20px`, `gap-6` is `24px`, etc. This applies to every spacing/sizing utility (`p-*`, `m-*`, `gap-*`, `w-*`, `h-*`...).
 
 ::: tip
-`4px` is Tailwind's default base value (it ships as `--spacing: 0.25rem`). You only need to override `--spacing` if your design system uses a different base unit.
+`0.25rem` (4px) is Tailwind's default base. Keeping it in `rem` means spacing scales with the user's browser font-size preference, consistent with the [typography tokens](/tailwind/design-tokens/typography). Override `--spacing` only if your design system uses a different base unit.
 :::
 
 ## Curated (non-linear) scales: use named tokens
@@ -38,12 +38,12 @@ Instead, define **named** tokens that carry the design's intent:
 
 ```css
 @theme {
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 40px;
-  --spacing-2xl: 64px;
+  --spacing-xs: 0.25rem;  /* 4px */
+  --spacing-sm: 0.5rem;   /* 8px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2.5rem;   /* 40px */
+  --spacing-2xl: 4rem;    /* 64px */
 }
 ```
 

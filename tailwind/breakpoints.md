@@ -82,7 +82,7 @@ Every breakpoint also has a `max-*` variant, so you can target a range — or a 
 
 ## Bundling responsive rules into a utility
 
-When the same responsive behaviour repeats, don't scatter `lg:` prefixes across every component — bake it into a composite `@utility` with `@variant`, so the responsive logic lives in one place. This is exactly how the typography utilities work:
+When the same responsive behaviour repeats, don't scatter `lg:` prefixes across every component — bake it into a custom `@utility` with `@variant`, so the responsive logic lives in one place. This is exactly how the typography utilities work:
 
 ```css
 /* styles/utilities/text.css */
