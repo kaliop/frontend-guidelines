@@ -36,8 +36,8 @@ components/
 styles/
 ├── base/                  # Element styles and resets (plain CSS)
 ├── configs/               # Design tokens (@theme)
-├── variants/              # Custom variants (@custom-variant)
-└── utilities/             # Custom utility classes (@utility)
+├── utilities/             # Custom utility classes (@utility)
+└── variants/              # Custom variants (@custom-variant)
 ```
 
 ## Differences from previous guidelines

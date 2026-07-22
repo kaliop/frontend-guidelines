@@ -18,8 +18,8 @@ styles/
 ├── index.css       → Entry point, imports all other files
 ├── base/           → Element styles and resets (plain CSS)
 ├── configs/        → Design tokens — @theme
-├── variants/       → Custom variants — @custom-variant
-└── utilities/      → Custom utility classes — @utility
+├── utilities/      → Custom utility classes — @utility
+└── variants/       → Custom variants — @custom-variant
 ```
 
 ## Folder Descriptions
@@ -30,15 +30,15 @@ Each folder (except `base/`) maps to **exactly one** Tailwind directive. That ma
 |--------|---------|-----------|
 | `base/` | Global styles applied to HTML elements (body, links, buttons...). Resets and foundational rules. | — (plain CSS) |
 | `configs/` | Design tokens: colors, spacing, typography, easings, layout variables. | `@theme` |
-| `variants/` | Custom variants such as `hoverfocus` or `opened`. | `@custom-variant` |
 | `utilities/` | Custom utility classes that combine multiple properties, like `layout-container` or `heading-1`. | `@utility` |
+| `variants/` | Custom variants such as `hoverfocus` or `opened`. | `@custom-variant` |
 
 ::: tip Which folder does my code go in?
 Follow the directive, not the intent:
 
 - a design token (`@theme`) → `configs/`
-- a custom variant (`@custom-variant`) → `variants/`
 - a custom utility class (`@utility`) → `utilities/`
+- a custom variant (`@custom-variant`) → `variants/`
 :::
 
 ## Import Order
@@ -59,13 +59,13 @@ Follow the directive, not the intent:
 @import "./configs/spacing.css";
 /* ... */
 
-/* 4. Variants */
-@import "./variants/variants.css";
-/* ... */
-
-/* 5. Utilities */
+/* 4. Utilities */
 @import "./utilities/layout.css";
 @import "./utilities/text.css";
+/* ... */
+
+/* 5. Variants */
+@import "./variants/variants.css";
 /* ... */
 ```
 
