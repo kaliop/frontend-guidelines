@@ -43,12 +43,12 @@ Follow the directive, not the intent:
 
 ## Import Order
 
-The order of imports in `index.css` matters for CSS cascade. Files are imported in this specific order:
+`@import "tailwindcss"` **must come first** — it sets up Tailwind's theme and cascade layers. The grouping below is for **readability and consistency**; it does not drive the cascade (see the note under the snippet):
 
 ```css
 /* styles/index.css */
 
-/* 1. Tailwind base */
+/* 1. Tailwind (theme + base/components/utilities layers) */
 @import "tailwindcss";
 
 /* 2. Base styles */
@@ -69,6 +69,8 @@ The order of imports in `index.css` matters for CSS cascade. Files are imported 
 /* ... */
 ```
 
-::: warning
-Always respect this import order when adding new files. Utilities depend on tokens defined in configs, and variants may rely on base styles.
+::: tip Precedence comes from layers, not import order
+Tailwind v4 organises styles into cascade layers — `theme`, `base`, `components`, `utilities` (lowest to highest priority). A **utility always wins over a `base` rule** through this layer order, so the position of your `@import`s does not change precedence. Likewise, `@theme`, `@utility`, and `@custom-variant` are registered wherever they are imported.
+
+The one rule that matters for the cascade: write your resets and element styles inside `@layer base { … }`. Unlayered CSS beats every layer, so base styles left outside a layer would override your utilities.
 :::
