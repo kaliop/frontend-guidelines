@@ -53,6 +53,7 @@ export default defineConfig({
           { text: "Spacing", link: "/tailwind/design-tokens/spacing" },
           { text: "Typography", link: "/tailwind/design-tokens/typography" },
           { text: "Easings", link: "/tailwind/design-tokens/easings" },
+          { text: "Breakpoints & Responsive", link: "/tailwind/breakpoints" },
           { text: "Layout", link: "/tailwind/layout" },
           { text: "Custom Variants", link: "/tailwind/custom-variants" },
         ],
