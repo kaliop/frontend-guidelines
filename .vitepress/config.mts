@@ -24,6 +24,20 @@ export default defineConfig({
         link: "/getting-started/",
       },
       {
+        text: "Components",
+        items: [
+          { text: "Atomic Design", link: "/components/" },
+          {
+            text: "Naming Conventions",
+            link: "/components/naming-conventions",
+          },
+          {
+            text: "Self-contained Components",
+            link: "/components/self-contained-components",
+          },
+        ],
+      },
+      {
         text: "Tailwind CSS",
         items: [
           {
@@ -41,16 +55,6 @@ export default defineConfig({
           { text: "Easings", link: "/tailwind/design-tokens/easings" },
           { text: "Layout", link: "/tailwind/layout" },
           { text: "Custom Variants", link: "/tailwind/custom-variants" },
-        ],
-      },
-      {
-        text: "Components",
-        items: [
-          { text: "Atomic Design", link: "/components/" },
-          {
-            text: "Naming Conventions",
-            link: "/components/naming-conventions",
-          },
         ],
       },
       {
