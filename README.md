@@ -18,7 +18,7 @@ Each project's section contains its own documentation (e.g. `getting-started/`, 
 
 ## Prerequisites
 
-- **Node.js** 20 or higher ([nodejs.org](https://nodejs.org/); LTS is recommended)
+- **Node.js** 22 or higher ([nodejs.org](https://nodejs.org/); LTS is recommended). A `.nvmrc` is provided — run `nvm use`.
 
 > [!NOTE]
 > This site runs on VitePress `2.0.0-alpha`. It is a pre-release, so some APIs and defaults may change between versions.

@@ -9,7 +9,7 @@ This is **not** an application codebase — it is the **Kaliop Frontend Guidelin
 ## Commands
 
 ```bash
-npm install       # install dependencies (Node.js 20+ required)
+npm install       # install dependencies (Node.js 22+ required)
 npm run dev       # dev server with hot reload (http://localhost:5173/frontend-guidelines/)
 npm run build     # static build → .vitepress/dist
 npm run preview   # serve the production build locally
