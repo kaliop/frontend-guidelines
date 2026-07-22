@@ -6,6 +6,20 @@
 
 Tailwind scans your HTML files, JavaScript components, and templates for class names, generates the corresponding styles, and writes them to a static CSS file. It is fast, flexible, and reliable — with zero runtime.
 
+## Browser support
+
+Tailwind CSS v4 targets modern browsers. Its minimum baseline is:
+
+| Browser | Minimum version |
+|---------|-----------------|
+| Chrome / Edge | 111 |
+| Safari | 16.4 |
+| Firefox | 128 |
+
+These versions already cover the modern CSS features Tailwind relies on — cascade layers, `@property`, `color-mix()`, and `oklch()` — so [colors defined in OKLCH](/tailwind/design-tokens/colors) work without fallbacks. If a project must support browsers older than this baseline, Tailwind v4 is not a fit.
+
+For the full list of features and their support, see the official [Compatibility](https://tailwindcss.com/docs/compatibility) documentation.
+
 ## Installation
 
 Installation steps depend on your tooling. The official documentation describes the recommended approach for each setup:
