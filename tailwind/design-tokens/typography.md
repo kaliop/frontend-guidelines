@@ -14,16 +14,16 @@ Base tokens define the fundamental typographic values that will be used to build
 @theme {
   --text-*: initial;
 
-  /* Text sizes */
-  --text-sm: 1.4rem;
-  --text-base: 1.6rem;
-  --text-lg: 1.8rem;
-  --text-xl: 2rem;
-  --text-2xl: 2.4rem;
-  --text-3xl: 3.2rem;
-  --text-4xl: 4rem;
-  --text-5xl: 6rem;
-  --text-6xl: 7.2rem;
+  /* Text sizes — rem relative to the default 16px root */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-base: 1rem;    /* 16px */
+  --text-lg: 1.125rem;  /* 18px */
+  --text-xl: 1.25rem;   /* 20px */
+  --text-2xl: 1.5rem;   /* 24px */
+  --text-3xl: 2rem;     /* 32px */
+  --text-4xl: 2.5rem;   /* 40px */
+  --text-5xl: 3.75rem;  /* 60px */
+  --text-6xl: 4.5rem;   /* 72px */
   /* ... */
 
   /* Line heights */
