@@ -69,6 +69,7 @@ export default defineConfig({
         text: "Storybook",
         items: [
           { text: "Introduction", link: "/storybook/" },
+          { text: "Installation and setup", link: "/storybook/installation-and-setup" },
           { text: "Story Structure", link: "/storybook/story-structure" },
           { text: "Story Organization", link: "/storybook/story-organization" },
           { text: "Args & ArgTypes", link: "/storybook/args-argtypes" },
