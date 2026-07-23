@@ -42,25 +42,31 @@ return (
 Variants allow you to change styles dynamically. Each variant can modify one or more slots. The variant value is typically driven by a component prop or a computed value.
 
 ```typescript
-const UiMyComponent = ({ size = "default" }) => {
-  const classes = tv({
-    slots: {
-      root: "rounded-full",
+const classes = tv({
+  slots: {
+    root: "rounded-full",
+  },
+  variants: {
+    size: {
+      default: { root: "size-[50px]" },
+      small: { root: "size-[30px]" },
     },
-    variants: {
-      size: {
-        default: { root: "size-[50px]" },
-        small: { root: "size-[30px]" },
-      },
-    },
-  });
+  },
+});
 
-  // The variant value comes from the component's prop
+type UiMyComponentProps = {
+  size?: "default" | "small";
+  title: string;
+};
+
+const UiMyComponent = ({ size = "default", title }: UiMyComponentProps) => {
   const { root } = classes({ size });
 
-  return <div className={root()} />;
+  return <div className={root()}>{title}</div>;
 };
 ```
+
+Props are typed **explicitly** — variant props (`size`) and any others (content, handlers, `overrideClasses`...) live in the same type.
 
 This way, the parent component controls the style by passing a prop:
 
