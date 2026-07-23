@@ -12,7 +12,7 @@ const meta = {
   component: UiMyComponent,
   decorators: [
     (Story) => (
-      <div className="max-w-940">
+      <div className="max-w-[940px]">
         <Story />
       </div>
     ),
@@ -29,7 +29,7 @@ Some components need a max-width to render as they would in the real layout:
 ```typescript
 decorators: [
   (Story) => (
-    <div className="max-w-940">
+    <div className="max-w-[940px]">
       <Story />
     </div>
   ),
