@@ -101,29 +101,29 @@ Slots follow a consistent naming convention:
 
 ## Custom Wrapper
 
-When using custom design tokens (like custom spacing values), `tailwind-merge` needs to be configured to recognize them. A custom wrapper around `tv` handles this:
+`tailwind-merge` (which resolves class conflicts) already knows Tailwind's default utilities — including the **numeric spacing scale** (`p-4`, `gap-8`...) and `--color-*` tokens. Those need no configuration.
+
+It does **not** read your `@theme`, though. So if you use **named** tokens that aren't part of the defaults — such as named spacing like `p-md` (see [Spacing](/tailwind/design-tokens/spacing)) — you must register their keys, or `tailwind-merge` won't treat them as conflicting. A thin wrapper around `tv` centralises that config:
 
 ```typescript
 // lib/tailwindVariants.ts
 
-import { tv as tvBase } from "tailwind-variants";
+import { tv as tvBase, type TV } from "tailwind-variants";
 
 export const tv: TV = (options, config) =>
   tvBase(options, {
     ...config,
     twMergeConfig: {
       theme: {
-        spacing: ["1", "2", "3", "4", "5", "6", "7", "8"],
-      },
-      conflictingClassGroups: {
-        px: ["pl", "pr"],
-        py: ["pt", "pb"],
-        // ...
+        // Named spacing tokens (numeric ones are already known)
+        spacing: ["xs", "sm", "md", "lg", "xl", "2xl"],
       },
     },
   });
 ```
 
-::: warning
-Always import `tv` from this wrapper instead of directly from `tailwind-variants`. This ensures your custom tokens are handled correctly when merging classes.
+::: warning Keep this list in sync
+These keys must match the named tokens in your `@theme` — `tailwind-merge` can't read them for you. Whenever you add or rename a named token, update this list, or class overrides for that token will silently stop merging correctly.
 :::
+
+If your project uses only the numeric scale and default colors, you don't need this wrapper — import `tv` directly from `tailwind-variants`. If you do add it, always import `tv` from the wrapper (not from `tailwind-variants`) so the config applies everywhere.
