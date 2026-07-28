@@ -32,6 +32,10 @@ export default defineConfig({
             link: "/components/naming-conventions",
           },
           {
+            text: "Component Anatomy",
+            link: "/components/component-anatomy",
+          },
+          {
             text: "Self-contained Components",
             link: "/components/self-contained-components",
           },
