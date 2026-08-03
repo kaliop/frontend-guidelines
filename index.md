@@ -11,17 +11,17 @@ hero:
       link: /getting-started/
     - theme: alt
       text: Browse documentation
-      link: /tailwind/installation-and-editor-setup
+      link: /components/
 
 features:
+  - title: Components
+    details: Atomic design methodology, naming conventions, and self-contained component principles for structuring the design system.
+    link: /components/
+    linkText: Atomic design
   - title: Tailwind CSS
     details: Styles architecture, design tokens (colors, spacing, typography, easings), layout utilities, and custom variants.
     link: /tailwind/installation-and-editor-setup
     linkText: Installation and editor setup
-  - title: Components
-    details: Atomic design methodology and naming conventions for structuring the design system.
-    link: /components/
-    linkText: Atomic design
   - title: Styling Components
     details: Slots, variants, and override classes with Tailwind Variants and tailwind-merge.
     link: /styling/styling-with-tv

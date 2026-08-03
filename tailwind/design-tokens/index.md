@@ -35,7 +35,7 @@ This automatically generates Tailwind utility classes:
 | `--spacing-m`     | `p-m`, `m-m`, `gap-m`...                          |
 
 ::: tip
-Tokens are defined in CSS, not JavaScript. This keeps configuration close to where styles are written and makes it easy to use CSS features like media queries for responsive tokens.
+Tokens are defined in CSS, not JavaScript. This keeps configuration close to where styles are written and makes it easy to use CSS features like media queries for responsive tokens — see [Breakpoints & Responsive](/tailwind/breakpoints).
 :::
 
 ## Token Categories

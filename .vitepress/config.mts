@@ -24,6 +24,24 @@ export default defineConfig({
         link: "/getting-started/",
       },
       {
+        text: "Components",
+        items: [
+          { text: "Atomic Design", link: "/components/" },
+          {
+            text: "Naming Conventions",
+            link: "/components/naming-conventions",
+          },
+          {
+            text: "Component Anatomy",
+            link: "/components/component-anatomy",
+          },
+          {
+            text: "Self-contained Components",
+            link: "/components/self-contained-components",
+          },
+        ],
+      },
+      {
         text: "Tailwind CSS",
         items: [
           {
@@ -39,18 +57,9 @@ export default defineConfig({
           { text: "Spacing", link: "/tailwind/design-tokens/spacing" },
           { text: "Typography", link: "/tailwind/design-tokens/typography" },
           { text: "Easings", link: "/tailwind/design-tokens/easings" },
+          { text: "Breakpoints & Responsive", link: "/tailwind/breakpoints" },
           { text: "Layout", link: "/tailwind/layout" },
           { text: "Custom Variants", link: "/tailwind/custom-variants" },
-        ],
-      },
-      {
-        text: "Components",
-        items: [
-          { text: "Atomic Design", link: "/components/" },
-          {
-            text: "Naming Conventions",
-            link: "/components/naming-conventions",
-          },
         ],
       },
       {
@@ -64,6 +73,7 @@ export default defineConfig({
         text: "Storybook",
         items: [
           { text: "Introduction", link: "/storybook/" },
+          { text: "Installation and setup", link: "/storybook/installation-and-setup" },
           { text: "Story Structure", link: "/storybook/story-structure" },
           { text: "Story Organization", link: "/storybook/story-organization" },
           { text: "Args & ArgTypes", link: "/storybook/args-argtypes" },

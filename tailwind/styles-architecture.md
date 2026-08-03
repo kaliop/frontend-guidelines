@@ -16,29 +16,39 @@
 ```
 styles/
 ├── index.css       → Entry point, imports all other files
-├── base/           → Base styles and resets
-├── configs/        → Design tokens (@theme definitions)
-├── helpers/        → Custom variants and helper utilities
-└── utilities/      → Composite utility classes
+├── base/           → Element styles and resets (plain CSS)
+├── configs/        → Design tokens — @theme
+├── utilities/      → Custom utility classes — @utility
+└── variants/       → Custom variants — @custom-variant
 ```
 
 ## Folder Descriptions
 
-| Folder | Purpose |
-|--------|---------|
-| `base/` | Global styles applied to HTML elements (body, links, buttons...). Resets and foundational rules. |
-| `configs/` | Design tokens defined with `@theme`: colors, spacing, typography, easings, layout variables. |
-| `helpers/` | Custom Tailwind variants (`@custom-variant`) and small reusable helpers. |
-| `utilities/` | Complex utility classes (`@utility`) that combine multiple Tailwind properties, like `layout-container` or `heading-1`. |
+Each folder (except `base/`) maps to **exactly one** Tailwind directive. That mapping is the rule for where new code goes:
+
+| Folder | Purpose | Directive |
+|--------|---------|-----------|
+| `base/` | Global styles applied to HTML elements (body, links, buttons...). Resets and foundational rules. | — (plain CSS) |
+| `configs/` | Design tokens: colors, spacing, typography, easings, layout variables. | `@theme` |
+| `utilities/` | Custom utility classes that combine multiple properties, like `layout-container` or `heading-1`. | `@utility` |
+| `variants/` | Custom variants such as `hoverfocus` or `opened`. | `@custom-variant` |
+
+::: tip Which folder does my code go in?
+Follow the directive, not the intent:
+
+- a design token (`@theme`) → `configs/`
+- a custom utility class (`@utility`) → `utilities/`
+- a custom variant (`@custom-variant`) → `variants/`
+:::
 
 ## Import Order
 
-The order of imports in `index.css` matters for CSS cascade. Files are imported in this specific order:
+`@import "tailwindcss"` **must come first** — it sets up Tailwind's theme and cascade layers. The grouping below is for **readability and consistency**; it does not drive the cascade (see the note under the snippet):
 
 ```css
 /* styles/index.css */
 
-/* 1. Tailwind base */
+/* 1. Tailwind (theme + base/components/utilities layers) */
 @import "tailwindcss";
 
 /* 2. Base styles */
@@ -49,16 +59,18 @@ The order of imports in `index.css` matters for CSS cascade. Files are imported 
 @import "./configs/spacing.css";
 /* ... */
 
-/* 4. Helpers */
-@import "./helpers/variants.css";
-/* ... */
-
-/* 5. Utilities */
+/* 4. Utilities */
 @import "./utilities/layout.css";
 @import "./utilities/text.css";
 /* ... */
+
+/* 5. Variants */
+@import "./variants/variants.css";
+/* ... */
 ```
 
-::: warning
-Always respect this import order when adding new files. Utilities depend on tokens defined in configs, and helpers may rely on base styles.
+::: tip Precedence comes from layers, not import order
+Tailwind v4 organises styles into cascade layers — `theme`, `base`, `components`, `utilities` (lowest to highest priority). A **utility always wins over a `base` rule** through this layer order, so the position of your `@import`s does not change precedence. Likewise, `@theme`, `@utility`, and `@custom-variant` are registered wherever they are imported.
+
+The one rule that matters for the cascade: write your resets and element styles inside `@layer base { … }`. Unlayered CSS beats every layer, so base styles left outside a layer would override your utilities.
 :::

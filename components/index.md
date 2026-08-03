@@ -3,7 +3,11 @@
 [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/) is a methodology created by Brad Frost that structures UI components into levels of increasing complexity. It helps build consistent, reusable, and maintainable design systems.
 
 ::: info Simplified approach
-The original methodology defines 5 levels: atoms, molecules, organisms, templates, and pages. For the purpose of our design system, we only apply the first 3 levels (atoms, molecules, organisms) and add a **primitives** level specific to our approach. Templates and pages are handled at the application level and are outside the scope of the design system.
+The original methodology defines 5 levels: atoms, molecules, organisms, templates, and pages. For the purpose of our design system, we only apply the first 3 levels (atoms, molecules, organisms) and add a **primitives** level specific to our approach. Templates and pages are intentionally left out: they belong to the application that *composes* these components — keeping them out of scope is what keeps the design system reusable across projects.
+:::
+
+::: tip A shared vocabulary, not a rulebook
+The point of these levels is to make **composition** and **communication** easier across the team — not to classify every component perfectly. When a component sits on the fence (is this card a molecule or an organism?), don't over-think it: **pick a level, stay consistent, and move on.** What matters is that the system helps the team build faster, and that a component's name says what it is (`UiCard`) regardless of its level.
 :::
 
 ## Component Levels
@@ -44,7 +48,7 @@ components/ui/
 
 ## How to Choose the Right Level
 
-When creating a new component, ask yourself:
+Use these questions as a quick rule of thumb, not a strict test — they settle most cases, and the rare ambiguous ones aren't worth a long debate:
 
 | Question | If yes → |
 |----------|----------|
