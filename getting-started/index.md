@@ -32,7 +32,7 @@ components/
 └── ui/                    # Design System
     ├── atoms/             # Basic building blocks
     ├── molecules/         # Combinations of atoms
-    ├── organisms/         # Complex UI sections
+    ├── organisms/         # Complete page sections
     └── primitives/        # Headless/unstyled components
 
 styles/

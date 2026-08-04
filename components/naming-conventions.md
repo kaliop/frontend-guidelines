@@ -1,5 +1,9 @@
 # Naming Conventions
 
+::: info Framework agnostic
+Examples use React file conventions (PascalCase filenames, `.tsx`). The naming principles — the `Ui` prefix and one folder per component — are the same in any framework; adapt the file names and extensions to yours.
+:::
+
 ## Component Naming
 
 All UI components follow the pattern `Ui` + PascalCase:
