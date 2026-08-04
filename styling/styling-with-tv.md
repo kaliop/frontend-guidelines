@@ -1,6 +1,10 @@
 # Styling with Tailwind Variants
 
-[Tailwind Variants](https://www.tailwind-variants.org/) is a library that brings a **slots** and **variants** system for organizing component styling with Tailwind CSS. It is framework-agnostic.
+[Tailwind Variants](https://www.tailwind-variants.org/) is a library that brings a **slots** and **variants** system for organizing component styling with Tailwind CSS.
+
+::: info Framework agnostic
+Tailwind Variants works with any framework. The examples here use React (`className`, JSX); the `tv()` API is identical everywhere — only how you bind the classes to your markup changes (`className` in React, `:class` in Vue, and so on).
+:::
 
 ## Tailwind Merge
 
@@ -73,6 +77,37 @@ This way, the parent component controls the style by passing a prop:
 ```html
 <UiMyComponent size="small" />
 ```
+
+## Compound Variants
+
+Sometimes a combination of variants needs its own styles — not either value on its own, but both together. `compoundVariants` applies classes only when several variant values match at once.
+
+```typescript
+const classes = tv({
+  slots: {
+    root: "rounded-full",
+  },
+  variants: {
+    size: {
+      default: { root: "size-[50px]" },
+      small: { root: "size-[30px]" },
+    },
+    intent: {
+      solid: { root: "bg-primary" },
+      ghost: { root: "bg-transparent" },
+    },
+  },
+  compoundVariants: [
+    {
+      size: "small",
+      intent: "ghost",
+      class: { root: "border border-primary" },
+    },
+  ],
+});
+```
+
+The border applies only when `size` is `small` **and** `intent` is `ghost`. With slots, a compound variant's `class` is an object keyed by slot.
 
 ## Overriding Styles
 

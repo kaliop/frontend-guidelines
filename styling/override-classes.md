@@ -23,14 +23,14 @@ type UiMyComponentProps = {
   };
 };
 
-const UiMyComponent = ({ title, overrideClasses }: UiMyComponentProps) => {
-  const classes = tv({
-    slots: {
-      root: "flex flex-col gap-3",
-      titleElement: "heading-6",
-    },
-  });
+const classes = tv({
+  slots: {
+    root: "flex flex-col gap-3",
+    titleElement: "heading-6",
+  },
+});
 
+const UiMyComponent = ({ title, overrideClasses }: UiMyComponentProps) => {
   const { root, titleElement } = classes();
 
   return (
@@ -51,7 +51,7 @@ Pass the desired classes via the `overrideClasses` prop:
 <UiMyComponent
   title="Hello"
   overrideClasses={{
-    root: "mt-auto col-span-6",
+    root: "mt-auto col-span-4 lg:col-span-6",
   }}
 />
 ```
@@ -62,7 +62,6 @@ Pass the desired classes via the `overrideClasses` prop:
 - **Only expose other slots when a real need exists**: Don't expose everything by default
 - **Add slots progressively**: Start minimal, add more as needs arise
 
-## When Not to Use It
-
-- **Don't use `overrideClasses` to change the fundamental look** of a component — that's what variants are for
-- It is meant for **positioning and contextual adjustments** only
+::: warning When Not to Use It
+`overrideClasses` is meant for **positioning and contextual adjustments** only. Don't use it to change a component's fundamental look — that's what [variants](/styling/styling-with-tv#variants) are for.
+:::
