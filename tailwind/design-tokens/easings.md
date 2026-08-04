@@ -12,10 +12,16 @@ There are three main types of easings:
 
 ## Defining Easings
 
+::: info Customizing is optional
+Tailwind ships with default easing curves (`ease-in`, `ease-out`, `ease-in-out`, `ease-linear`). Customizing them is **optional** — do it when your project's motion design calls for specific curves. The example below resets the defaults with `--ease-*: initial` so only the project's curves remain; drop that line to keep Tailwind's defaults alongside yours.
+:::
+
 ```css
 /* styles/configs/easings.css */
 
 @theme {
+  --ease-*: initial;
+
   /* Ease out - most commonly used */
   --ease-out-quad: cubic-bezier(0.5, 1, 0.89, 1);
   --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);

@@ -1,7 +1,7 @@
 # Typography
 
 Typography is defined in two parts:
-- **Base tokens** (sizes, line-heights) in `configs/`
+- **Base tokens** (font families, sizes, line-heights) in `configs/`
 - **Typography utilities** (heading, body, label) in `utilities/`
 
 ## Base Tokens
@@ -32,6 +32,19 @@ Base tokens define the fundamental typographic values that will be used to build
   --leading-l: 1.66;
 }
 ```
+
+Font families are defined in their own config file:
+
+```css
+/* styles/configs/font.css */
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Poppins", sans-serif;
+}
+```
+
+These generate the matching utilities (`font-sans`, `font-heading`, ...).
 
 ## Typography Utilities
 
@@ -73,3 +86,5 @@ Use typography utilities directly in your markup:
 <p class="body-m">Paragraph text</p>
 <span class="label-m">Label text</span>
 ```
+
+Utilities usually come as a family (`heading-*`, `body-*`, `label-*`); the exact names come from your design system and vary per project.

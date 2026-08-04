@@ -58,7 +58,7 @@ You then choose how strict to be:
 | Approach | How | When |
 |----------|-----|------|
 | **Hybrid** (recommended) | Keep `--spacing` **and** add your named tokens | Use `p-md` by default, keep `p-4` / `p-[13px]` as an escape hatch |
-| **Closed scale** | Reset the namespace with `--spacing-*: initial`, then define only your named tokens | Strict designs where only the approved steps may be used |
+| **Closed scale** | Disable the dynamic scale with `--spacing: initial`, then define only your named tokens | Strict designs where only the approved steps may be used |
 
 ## Usage
 
