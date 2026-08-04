@@ -4,7 +4,6 @@ layout: home
 hero:
   name: "Kaliop Frontend Guidelines"
   text: "Build consistent, scalable, and maintainable interfaces"
-  tagline: Standards and best practices for frontend development
   actions:
     - theme: brand
       text: Get Started
