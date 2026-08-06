@@ -12,6 +12,10 @@ All UI components follow the pattern `Ui` + PascalCase:
 
 The `Ui` prefix clearly distinguishes design system components from other application components.
 
+::: info Primitives
+Headless [primitives](/components/#primitives) are the exception: they keep their library-level name (`Dialog`, `Tooltip`) **without** the `Ui` prefix. This leaves the `Ui`-prefixed name free for a styled component built on top of the primitive (e.g. a `UiDialog` wrapping `Dialog`).
+:::
+
 ## Folder Structure
 
 Each component lives in its own folder, named after the component, containing all related files:

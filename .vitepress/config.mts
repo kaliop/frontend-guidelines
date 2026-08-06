@@ -39,6 +39,10 @@ export default defineConfig({
             text: "Self-contained Components",
             link: "/components/self-contained-components",
           },
+          {
+            text: "Building a Primitive",
+            link: "/components/building-a-primitive",
+          },
         ],
       },
       {
