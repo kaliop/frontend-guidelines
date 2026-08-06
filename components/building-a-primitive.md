@@ -2,12 +2,16 @@
 
 [Primitives](/components/#primitives) are headless components: they wrap a behaviour library like [Radix UI](https://www.radix-ui.com/) and add only the styling the design system needs. They follow the same [anatomy](/components/component-anatomy) as any other component — module-scope `tv()`, explicit props, `overrideClasses` — but expose the parts a parent may need to restyle (here the overlay and content) instead of a single `root`. They also keep their library-level name, without the `Ui` prefix (see [Naming Conventions](/components/naming-conventions)).
 
+::: info Framework agnostic
+The example uses React and Radix UI, but the approach applies with any framework and any headless component library — wrap the behaviour, add your styling, and expose what a parent may need to override.
+:::
+
 ## Why a primitives layer?
 
 Keeping behaviour and styling in separate layers pays off:
 
 - **Accessibility, done right** — dialogs, menus, comboboxes and the like require correct focus management, keyboard navigation, and ARIA. The primitive (via Radix) handles all of it, so you don't reimplement it — or get it wrong.
-- **Behaviour separated from style** — the primitive owns *how it works* (focus trap, portaling, click-outside, controlled state); the styled component on top owns only *how it looks*.
+- **Behaviour separated from style** — the primitive owns _how it works_ (focus trap, portaling, click-outside, controlled state); the styled component on top owns only _how it looks_.
 - **A reusable foundation** — one primitive (e.g. a popover) can back several styled components (tooltip, dropdown, date picker), so the interaction is written once.
 - **Consistent interaction** — every component built on the same primitive behaves the same way (Escape to close, trapped focus…).
 - **Isolated dependency** — wrapping the third-party library in your own primitive means swapping it later touches the primitive, not every consumer.
@@ -43,16 +47,27 @@ const classes = tv({
   },
 });
 
-const Dialog = ({ trigger, children, closeButton, overrideClasses }: DialogProps) => {
+const Dialog = ({
+  trigger,
+  children,
+  closeButton,
+  overrideClasses,
+}: DialogProps) => {
   const { overlayElement, contentElement } = classes();
 
   return (
     <RadixDialog.Root>
       <RadixDialog.Trigger asChild>{trigger}</RadixDialog.Trigger>
       <RadixDialog.Portal>
-        <RadixDialog.Overlay className={overlayElement({ class: overrideClasses?.overlay })} />
-        <RadixDialog.Content className={contentElement({ class: overrideClasses?.content })}>
-          {closeButton && <RadixDialog.Close asChild>{closeButton}</RadixDialog.Close>}
+        <RadixDialog.Overlay
+          className={overlayElement({ class: overrideClasses?.overlay })}
+        />
+        <RadixDialog.Content
+          className={contentElement({ class: overrideClasses?.content })}
+        >
+          {closeButton && (
+            <RadixDialog.Close asChild>{closeButton}</RadixDialog.Close>
+          )}
           {children}
         </RadixDialog.Content>
       </RadixDialog.Portal>
