@@ -57,7 +57,7 @@ This is the everyday answer to *"how do I use a token responsively?"*: use the t
 
 ```html
 <!-- Spacing token, mobile-first cascade:
-     16px (p-4) on mobile, 32px (p-6) from lg, 48px (p-8) from xl -->
+     16px (p-4) on mobile, 24px (p-6) from lg, 32px (p-8) from xl -->
 <section class="p-4 lg:p-6 xl:p-8">...</section>
 
 <!-- Gap token: grows on desktop -->

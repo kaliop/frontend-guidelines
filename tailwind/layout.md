@@ -11,6 +11,7 @@ Layout parameters are defined as tokens:
 
 @theme {
   --layout-width: 1440px;
+  --layout-spacing: 16px;
 
   --grid-columns-number: 4;
   --grid-desktop-columns-number: 12;
@@ -33,7 +34,7 @@ The `layout-container` utility creates a centered container with responsive side
 @utility layout-container {
   display: grid;
   grid-template-columns:
-    1fr min(calc(100% - var(--spacing-4) * 2), var(--layout-width))
+    1fr min(calc(100% - var(--layout-spacing) * 2), var(--layout-width))
     1fr;
 
   & > * {
@@ -60,7 +61,7 @@ This utility uses CSS Grid to create a 3-column layout:
    - Column 2: `min(calc(100% - margins), 1440px)` (content area)
    - Column 3: `1fr` (flexible, takes remaining space → right margin)
 
-3. **`min(calc(100% - var(--spacing-4) * 2), var(--layout-width))`** — The center column width is the **smaller** of:
+3. **`min(calc(100% - var(--layout-spacing) * 2), var(--layout-width))`** — The center column width is the **smaller** of:
    - `100%` minus side margins (full width with padding)
    - `1440px` (maximum width)
    

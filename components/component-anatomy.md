@@ -2,7 +2,9 @@
 
 [Naming Conventions](/components/naming-conventions) covers the files and folders of a component. This page covers the inside of the main component file: a suggested section order and where each piece lives.
 
+::: info Framework agnostic
 Examples are in React (the baseline for our examples). Treat this as a **suggestion, not a rule** — keep the overall structure, and adapt the concrete syntax to your framework and project.
+:::
 
 ## The three sections
 
@@ -15,7 +17,7 @@ Examples are in React (the baseline for our examples). Treat this as a **suggest
 ```tsx
 // UiCard/UiCard.tsx
 
-import { tv } from "@/lib/tailwindVariants";
+import { tv } from "tailwind-variants";
 
 // 1. Props
 export type UiCardProps = {
@@ -70,5 +72,5 @@ export default UiCard;
 ```
 
 ::: tip
-Keep this structure consistent across components so any file is easy to scan. The concrete syntax (props declaration, render, export) depends on your framework — adapt it as needed.
+Keep this structure consistent across components so any file is easy to scan.
 :::

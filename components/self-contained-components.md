@@ -8,11 +8,12 @@ This is the principle behind the [Override Classes](/styling/override-classes) p
 
 ### 1. A component blends into any environment
 
-A component must not make assumptions about **where** it is used. It does not decide:
+A component does not decide how it sits in its parent's layout:
 
-- its **width** — it takes the width its parent gives it, rather than forcing a fixed `width`;
-- its **position** — no `position: absolute`, `float`, or grid placement decided from the inside;
-- the **space around it** — margins to its neighbours are not its concern.
+- its **placement** — no `position`, `float`, or grid placement that positions it within the parent;
+- the **space around it** — outer margins to its neighbours belong to the parent.
+
+Its **intrinsic size** and its **internal layout** stay entirely the component's own — this rule is only about how it behaves toward the outside.
 
 This is what makes a component reusable: the same `UiCard` can sit in a 3-column grid, a modal, or a full-width section without any change.
 
@@ -65,7 +66,7 @@ When the parent needs to position or space a component, it does so from the outs
 // The parent decides where the card goes and how it sits in the grid
 <UiCard
   overrideClasses={{
-    root: "col-span-6 mt-auto", // positioning + outer spacing, from the parent
+    root: "col-span-4 lg:col-span-6 mt-auto", // positioning + outer spacing, from the parent
   }}
 />
 ```

@@ -15,7 +15,11 @@ export const Default: Story = {
 
 ## ArgTypes
 
-`argTypes` configure the interactive controls displayed in Storybook's panel. They allow you to test different prop values without editing code.
+`argTypes` configure the interactive controls displayed in Storybook's panel. They let you try different prop values without editing code.
+
+::: info Controls are inferred automatically
+With TypeScript, Storybook reads your component's prop types (and their JSDoc) to generate controls and descriptions on its own. You only write `argTypes` manually to **customize** a control — for example to force a `select` with specific options.
+:::
 
 ### Select control
 
@@ -23,7 +27,7 @@ Useful for enums or predefined options:
 
 ```typescript
 const meta = {
-  title: "ui/Atoms/MyComponent",
+  title: "ui/atoms/MyComponent",
   component: UiMyComponent,
   argTypes: {
     color: {

@@ -1,5 +1,9 @@
 # Naming Conventions
 
+::: info Framework agnostic
+Examples use React file conventions (PascalCase filenames, `.tsx`). The naming principles — the `Ui` prefix and one folder per component — are the same in any framework; adapt the file names and extensions to yours.
+:::
+
 ## Component Naming
 
 All UI components follow the pattern `Ui` + PascalCase:
@@ -7,6 +11,10 @@ All UI components follow the pattern `Ui` + PascalCase:
 - `UiIcon`, `UiAvatar`, `UiAccordion`, `UiHeader`
 
 The `Ui` prefix clearly distinguishes design system components from other application components.
+
+::: info Primitives
+Headless [primitives](/components/#primitives) are the exception: they keep their library-level name (`Dialog`, `Tooltip`) **without** the `Ui` prefix. This leaves the `Ui`-prefixed name free for a styled component built on top of the primitive (e.g. a `UiDialog` wrapping `Dialog`).
+:::
 
 ## Folder Structure
 

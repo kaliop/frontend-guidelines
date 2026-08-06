@@ -9,7 +9,9 @@
 - **Utility-first**: Style elements by combining small, single-purpose classes like `flex`, `p-4`, `text-center`
 - **[`@theme`](https://tailwindcss.com/docs/theme)**: Define your design tokens (colors, spacing, fonts...) directly in CSS using the `@theme` directive
 - **[`@utility`](https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities)**: Create your own reusable utility classes that combine multiple properties
-- **[`@custom-variant`](https://tailwindcss.com/docs/hover-focus-and-other-states#custom-variants)**: Define custom selectors to use as variants (like `hover:` or `focus:`)
+- **[`@apply`](https://tailwindcss.com/docs/functions-and-directives#apply-directive)**: Reuse existing utility classes inside your own CSS — for example within an `@utility` definition
+- **[`@custom-variant`](https://tailwindcss.com/docs/hover-focus-and-other-states#custom-variants)**: Define a custom variant (a selector to use like `hover:` or `focus:`)
+- **[`@variant`](https://tailwindcss.com/docs/functions-and-directives#variant-directive)**: Apply an existing variant (like `lg:` or `hover:`) to CSS inside a custom utility
 
 ## Styles Folder Structure
 
@@ -24,11 +26,11 @@ styles/
 
 ## Folder Descriptions
 
-Each folder (except `base/`) maps to **exactly one** Tailwind directive. That mapping is the rule for where new code goes:
+Each folder maps to **exactly one** kind of rule, which tells you where new code goes:
 
 | Folder | Purpose | Directive |
 |--------|---------|-----------|
-| `base/` | Global styles applied to HTML elements (body, links, buttons...). Resets and foundational rules. | — (plain CSS) |
+| `base/` | Global styles applied to HTML elements (body, links, buttons...). Resets and foundational rules. | `@layer base` |
 | `configs/` | Design tokens: colors, spacing, typography, easings, layout variables. | `@theme` |
 | `utilities/` | Custom utility classes that combine multiple properties, like `layout-container` or `heading-1`. | `@utility` |
 | `variants/` | Custom variants such as `hoverfocus` or `opened`. | `@custom-variant` |
@@ -36,6 +38,7 @@ Each folder (except `base/`) maps to **exactly one** Tailwind directive. That ma
 ::: tip Which folder does my code go in?
 Follow the directive, not the intent:
 
+- an element or reset style (`@layer base`) → `base/`
 - a design token (`@theme`) → `configs/`
 - a custom utility class (`@utility`) → `utilities/`
 - a custom variant (`@custom-variant`) → `variants/`

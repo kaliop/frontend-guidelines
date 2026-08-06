@@ -14,26 +14,29 @@ For example:
 
 | Component | Title |
 |-----------|-------|
-| Icon (atom) | `ui/Atoms/Icon` |
-| Accordion (molecule) | `ui/Molecules/Accordion` |
-| Hero (organism) | `ui/Organisms/Hero` |
+| Icon (atom) | `ui/atoms/Icon` |
+| Accordion (molecule) | `ui/molecules/Accordion` |
+| Hero (organism) | `ui/organisms/Hero` |
+| Dialog (primitive) | `ui/primitives/Dialog` |
 
 ## Resulting Sidebar
 
 ```
 ui/
-├── Atoms/
+├── atoms/
 │   ├── Icon
 │   ├── Image
 │   └── Cta
-├── Molecules/
+├── molecules/
 │   ├── Accordion
 │   ├── Card
 │   └── Menu
-└── Organisms/
-    ├── Header
-    ├── Hero
-    └── Footer
+├── organisms/
+│   ├── Header
+│   ├── Hero
+│   └── Footer
+└── primitives/
+    └── Dialog
 ```
 
 This structure mirrors the component folder organization and makes it easy to find any component.

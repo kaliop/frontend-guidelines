@@ -28,6 +28,7 @@ Use them in your markup just like any native Tailwind variant:
 - When a selector is **used repeatedly** across multiple components
 - When the equivalent native Tailwind syntax would be **too verbose**
 
+::: tip One-off selectors
 For a **one-off** selector, you don't need to register anything — use Tailwind's arbitrary variant syntax directly in the markup:
 
 ```html
@@ -35,3 +36,4 @@ For a **one-off** selector, you don't need to register anything — use Tailwind
 ```
 
 As soon as you catch yourself repeating the same arbitrary variant, promote it to a `@custom-variant` — this is exactly what the [Tailwind documentation](https://tailwindcss.com/docs/hover-focus-and-other-states#custom-variants) recommends.
+:::

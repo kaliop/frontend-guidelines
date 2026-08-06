@@ -20,6 +20,18 @@ npm run storybook
 
 Exact prerequisites and options vary per stack — see the official [Storybook installation guide](https://storybook.js.org/docs/get-started/install) and the [framework support](https://storybook.js.org/docs/get-started/frameworks) pages.
 
+### Pointing Storybook at your stories
+
+`.storybook/main.ts` is Storybook's main configuration file — it declares where your stories live, which addons to load, and the framework/builder. Stories are discovered through its `stories` glob; the CLI generates a default (often under `src/`), so if your components live elsewhere — like `components/ui/` — update it to match:
+
+```ts
+// .storybook/main.ts
+export default {
+  stories: ["../components/ui/**/*.stories.@(ts|tsx)"],
+  // ...
+};
+```
+
 ## Making Tailwind work in Storybook
 
 By default, Storybook renders components **in isolation** and knows nothing about your app's global CSS. So Tailwind's utilities, your [design tokens](/tailwind/design-tokens/), and custom utilities like `heading-1` or `layout-container` are simply absent — components look unstyled.

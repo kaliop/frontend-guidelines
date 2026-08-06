@@ -32,7 +32,7 @@ Examples: Header, Footer, Hero, Content sections.
 
 ### Primitives
 
-Headless (unstyled) components that encapsulate behavior without any visual opinion. They are typically based on libraries like [Radix UI](https://www.radix-ui.com/) and serve as a foundation for building styled components.
+Headless (unstyled) components that encapsulate behavior without any visual opinion. They are typically based on a headless library ([Radix UI](https://www.radix-ui.com/), or your framework's equivalent) and serve as a foundation for building styled components.
 
 Examples: Popover, Dialog, Tooltip.
 
@@ -42,7 +42,7 @@ Examples: Popover, Dialog, Tooltip.
 components/ui/
 ├── atoms/            # Basic building blocks
 ├── molecules/        # Combinations of atoms
-├── organisms/        # Complex page sections
+├── organisms/        # Complete page sections
 └── primitives/       # Headless behavior components
 ```
 

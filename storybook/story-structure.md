@@ -2,6 +2,10 @@
 
 A story file follows a consistent structure: a `meta` object that configures the story, and one or more exported stories.
 
+::: info Framework agnostic
+Examples use React (`@storybook/react`). Storybook supports other frameworks too — swap in the matching package (`@storybook/vue3`, `@storybook/angular`, ...); the story structure stays the same.
+:::
+
 ## Basic Structure
 
 ```typescript
@@ -11,7 +15,7 @@ import UiMyComponent from "./UiMyComponent";
 
 // Meta: configures the story
 const meta = {
-  title: "ui/Atoms/MyComponent",
+  title: "ui/atoms/MyComponent",
   component: UiMyComponent,
 } satisfies Meta<typeof UiMyComponent>;
 
@@ -26,6 +30,8 @@ export const Default: Story = {
 };
 ```
 
+This is Storybook's standard **Component Story Format (CSF)**: a default export for the `meta`, plus a named export for each story.
+
 ## Meta Properties
 
 | Property | Purpose |
@@ -35,4 +41,4 @@ export const Default: Story = {
 | `parameters` | Storybook configuration (layout, backgrounds...) |
 | `argTypes` | Controls configuration for interactive props |
 | `decorators` | Wrappers around the story for context |
-| `tags` | Labels like `beta`, `deprecated`... |
+| `tags` | Labels such as `autodocs` (auto-generates a documentation page), `beta`, `deprecated`... |

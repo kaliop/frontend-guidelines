@@ -16,7 +16,11 @@ Tailwind CSS v4 targets modern browsers. Its minimum baseline is:
 | Safari | 16.4 |
 | Firefox | 128 |
 
-These versions already cover the modern CSS features Tailwind relies on — cascade layers, `@property`, `color-mix()`, and `oklch()` — so [colors defined in OKLCH](/tailwind/design-tokens/colors) work without fallbacks. If a project must support browsers older than this baseline, Tailwind v4 is not a fit.
+These versions already cover the modern CSS features Tailwind relies on — cascade layers, `@property`, `color-mix()`, and `oklch()` — so [colors defined in OKLCH](/tailwind/design-tokens/colors) work without fallbacks.
+
+::: warning
+If a project must support browsers older than this baseline, Tailwind v4 is not a fit.
+:::
 
 For the full list of features and their support, see the official [Compatibility](https://tailwindcss.com/docs/compatibility) documentation.
 
@@ -28,13 +32,23 @@ Installation steps depend on your tooling. The official documentation describes 
 
 For other setups (PostCSS, Tailwind CLI, or Play CDN), see the [Tailwind CSS installation overview](https://tailwindcss.com/docs/installation).
 
+### Styling dependencies
+
+The styling approach in these guidelines also relies on [`tailwind-variants`](/styling/styling-with-tv), with `tailwind-merge` as its peer dependency for class conflict resolution:
+
+```bash
+npm install tailwind-variants tailwind-merge
+```
+
 ## Framework-specific guides
 
 The exact installation can vary depending on the framework you use (Next.js, Nuxt, Angular, Laravel, etc.). Tailwind provides [framework-specific guides](https://tailwindcss.com/docs/installation/framework-guides) that cover the recommended way to install and configure Tailwind in each environment.
 
 Check the [Framework guides](https://tailwindcss.com/docs/installation/framework-guides) page to find the guide that matches your stack. If your framework is not listed, you can fall back to the Vite plugin, PostCSS, or the Tailwind CLI.
 
+::: info
 If you're coming from our previous guidelines (Sass, CSS modules), see [Differences from previous guidelines](/getting-started/#differences-from-previous-guidelines) in Getting started.
+:::
 
 ## Editor setup
 
@@ -47,6 +61,28 @@ Two tools are especially useful:
 - **[Prettier plugin for Tailwind CSS](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)** — The official Prettier plugin automatically sorts class names in a consistent order. It works with your Tailwind config and keeps markup readable, especially when many classes are applied to a single element.
 
 For details and support in VS Code and Cursor, see the [Editor setup](https://tailwindcss.com/docs/editor-setup) documentation.
+
+### Make the tooling aware of `tv()`
+
+By default, neither tool looks inside [`tv()`](/styling/styling-with-tv) calls, so you lose autocomplete and class sorting in your component slots. Point them at `tv`.
+
+**IntelliSense** — add to your VS Code `settings.json`:
+
+```json
+{
+  "tailwindCSS.experimental.classRegex": [
+    ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ]
+}
+```
+
+**Prettier** — sort classes inside `tv()` via your Prettier config:
+
+```json
+{
+  "tailwindFunctions": ["tv"]
+}
+```
 
 ## Next steps
 

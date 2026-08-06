@@ -25,15 +25,18 @@ Storybook is **optional**: it documents and tests components in isolation, but a
 
 ## Project Structure
 
+A project separates the design system (`components/ui`) from global styles (`styles/`):
+
 ```
 components/
 └── ui/                    # Design System
     ├── atoms/             # Basic building blocks
     ├── molecules/         # Combinations of atoms
-    ├── organisms/         # Complex UI sections
+    ├── organisms/         # Complete page sections
     └── primitives/        # Headless/unstyled components
 
 styles/
+├── index.css              # Entry point, imports all other files
 ├── base/                  # Element styles and resets (plain CSS)
 ├── configs/               # Design tokens (@theme)
 ├── utilities/             # Custom utility classes (@utility)
@@ -70,6 +73,6 @@ Depending on your task, start with the relevant section:
 
 | Task | Recommended sections |
 |------|---------------------|
-| Create a new component | [Atomic Design](/components/), [Naming Conventions](/components/naming-conventions), [Styling with TV](/styling/styling-with-tv) |
-| Understand the styling system | [Design Tokens](/tailwind/design-tokens/), [Layout](/tailwind/layout) |
-| Document a component | [Storybook](/storybook/) |
+| Create a new component | [Atomic Design](/components/), [Naming Conventions](/components/naming-conventions), [Component Anatomy](/components/component-anatomy), [Self-contained Components](/components/self-contained-components), [Styling with TV](/styling/styling-with-tv) |
+| Understand the styling system | [Design Tokens](/tailwind/design-tokens/), [Breakpoints & Responsive](/tailwind/breakpoints), [Layout](/tailwind/layout) |
+| Document a component | [Storybook](/storybook/), [Installation and setup](/storybook/installation-and-setup) |
