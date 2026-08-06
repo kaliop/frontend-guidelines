@@ -39,13 +39,8 @@ export const WithCta: Story = {
 
 export const FullExample: Story = {
   args: {
-    ...Default.args,
+    ...WithCta.args,
     subtitle: "A subtitle",
-    ctaLabel: "Click here",
-    ctaLink: {
-      url: "#",
-      target: "_self",
-    },
   },
 };
 ```
